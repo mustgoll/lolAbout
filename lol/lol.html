@@ -1,0 +1,32 @@
+<!-- <div class="list-group">
+    <a ng-repeat="item in lolData" href="#" class="list-group-item active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.pn}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.game_zone.alias}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.game_zone.server_name}}</a>
+</div> -->
+<form class="navbar-form navbar-right">
+    <input type="text" class="form-control" ng-model="player" placeholder="请输入召唤师名字" ng-keyup='key($event)'>
+    <input type="button" class="btn btn-primary" value="按Enter键查询" ng-click="show()">
+</form>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <!-- Table -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>召唤师名字</th>
+                <th>服务器</th>
+                <th>区域</th>
+                <th>段位</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in lolData">
+                <th scope="row">{{lolData.indexOf(item)}}</th>
+                <td>{{item.pn}}</td>
+                <td>{{item.game_zone.alias}}</td>
+                <td>{{item.game_zone.server_name}}</td>
+                <td>{{item.tier_rank.tier.full_name_cn+item.tier_rank.rank.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
